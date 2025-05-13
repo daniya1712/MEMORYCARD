@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(-45deg, #ff9966, #ff5e62, #ffcc00, #ff6699);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+div.game-container {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+}
+
+div.controls {
+    margin-bottom: 15px;
+}
+
+select {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+div.stats {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+div.card-grid {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+div.card {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    user-select: none;
+}
+
+div.card.flipped {
+    background: #ffcc00;
+    transform: rotateY(180deg);
+}
+
+button {
+    background: #ff5e62;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e04a50;
+}
+
+div.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+div.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 600px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    .card-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
